@@ -7,17 +7,16 @@ conditions: {}
 replicaCount: 1
 
 image:
-  repository: planetlabs/draino
-  tag: 450a853
+  repository: hapu2000/draino
+  tag: latetest
   pullPolicy: IfNotPresent
 
 resources:
   limits:
-    cpu: 100m
-    memory: 128Mi
+    memory: 64Mi
   requests:
-    cpu: 100m
-    memory: 128Mi
+    cpu: 10m
+    memory: 16Mi
 
 # Add these annotations to all pods
 podAnnotations: {}
@@ -38,6 +37,15 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+  # nodeAffinity:
+  #   preferredDuringSchedulingIgnoredDuringExecution:
+  #     - weight: 100
+  #       preference:
+  #         matchExpressions:
+  #           - key: "kubernetes.io/arch"
+  #             operator: In
+  #             values:
+  #               - arm64
 
 # Security Context policies for pods
 # ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/

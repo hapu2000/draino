@@ -19,9 +19,13 @@ Adding Draino to the mix enables autoremediation:
    underutilised. It will be eligible for scale down (i.e. termination) by the
    Autoscaler after a configurable period of time.
 
+## Fork
+
+This is Fork from https://github.com/planetlabs/draino for amd64 and arm64 docker builds.
+
 ## Usage
 ```
-$ docker run planetlabs/draino /draino --help
+$ docker run hapu2000/draino /draino --help
 usage: draino [<flags>] <node-conditions>...
 
 Automatically cordons and drains nodes that match the supplied conditions.
@@ -88,11 +92,8 @@ Keep the following in mind before deploying Draino:
 
 ## Deployment
 
-Draino is automatically built from master and pushed to the [Docker Hub](https://hub.docker.com/r/planetlabs/draino/).
-Builds are tagged `planetlabs/draino:$(git rev-parse --short HEAD)`.
-
-**Note:** As of September, 2020 we no longer publish `planetlabs/draino:latest`
-in order to encourage explicit and pinned releases.
+Draino is automatically built from master and pushed to the [Docker Hub](https://hub.docker.com/r/hapu2000/draino/).
+Builds are tagged `hapu2000/draino:latest`.
 
 An [example Kubernetes deployment manifest](manifest.yml) is provided.
 
