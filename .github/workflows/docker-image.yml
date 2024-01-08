@@ -3,6 +3,9 @@ name: Docker Image CI
 on:
   push:
 
+env:
+  TARGET_REF: latest
+
 jobs:
   buildx:
     runs-on: ubuntu-latest
